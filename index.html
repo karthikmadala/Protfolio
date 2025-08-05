@@ -11,16 +11,25 @@
 </head>
 <body>
     <header class="main-header">
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
         <nav class="main-nav" aria-label="Main Navigation">
             <ul>
                 <li><a href="#summary">Summary</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="hidden"><a href="#certifications">Certifications</a></li>
+                <li class="hidden"><a href="#education">Education</a></li>
+                <li class="hidden"><a href="#projects">Projects</a></li>
+                <li class="hidden"><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="dropdown-menu">
+                <li class="hidden"><a href="#certifications">Certifications</a></li>
+                <li class="hidden"><a href="#education">Education</a></li>
+                <li class="hidden"><a href="#projects">Projects</a></li>
+                <li class="hidden"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -75,24 +84,40 @@
         </ul>
     </section>
 
+    <section id="wordpress-skills" class="section">
+        <h2>WordPress Expertise</h2>
+        <p>Experienced in developing and customizing robust WordPress solutions. My skills include:</p>
+        <ul>
+            <li>Theme Development & Customization</li>
+            <li>Plugin Integration & Custom Functionality</li>
+            <li>WooCommerce & E-commerce Solutions</li>
+            <li>Performance Optimization</li>
+            <li>Security Best Practices</li>
+        </ul>
+    </section>
+
     <section id="experience" class="section">
         <h2>Professional Experience</h2>
-        <h3>Software Engineer Intern</h3>
-        <p><strong>App Stars Applications Private Limited, Chennai, Tamil Nadu</strong><br>November 2024 - Present</p>
-        <ul>
-            <li>Developed and maintained blockchain-based decentralized applications (DApps) with integrations for MetaMask and Sui wallets, supporting both EVM and non-EVM blockchain ecosystems.</li>
-            <li>Integrated secure RESTful APIs to enable seamless communication between front-end applications and blockchain networks, leveraging an understanding of Node.js code.</li>
-            <li>Deployed and managed applications on AWS infrastructure (Ubuntu, MySQL, Apache2), ensuring scalability, performance, and reliability.</li>
-            <li>Delivered five live blockchain projects with specialized features using Onramp payment gateways:</li>
-            <ul>
-                <li><strong>Zapme (<a href="https://ico.zapme.co" target="_blank" rel="noopener noreferrer">ico.zapme.co</a>):</strong> Built a secure ICO platform using Laravel for efficient token sales and user management.</li>
-                <li><strong>Stoneform (<a href="https://ico.stoneform.io" target="_blank" rel="noopener noreferrer">ico.stoneform.io</a>):</strong> Implemented Stripe Onramp API for fiat-to-crypto transactions and integrated a Telegram bot (developed with Python with AI assistance) for real-time transaction notifications.</li>
-                <li><strong>Coastal Crypto (<a href="https://tokensale.gocoastalcrypto.com" target="_blank" rel="noopener noreferrer">tokensale.gocoastalcrypto.com</a>):</strong> Developed a system bridging EVM and non-EVM chains, enabling automatic fund transfers using Node.js-based solutions.</li>
-                <li><strong>Terrafund (<a href="https://buy.terrafund.dev" target="_blank" rel="noopener noreferrer">buy.terrafund.dev</a>):</strong> Integrated MoonPay Onramp API for secure cryptocurrency purchases, enhancing user accessibility.</li>
-                <li><strong>YA Group Coin (<a href="https://admin.yagc.io" target="_blank" rel="noopener noreferrer">admin.yagc.io</a>):</strong> Implemented MoonPay Onramp API and developed an admin panel for streamlined ICO management.</li>
-            </ul>
-            <li>Collaborated in Agile teams to deliver high-quality, scalable solutions, adhering to best practices in code quality and project management.</li>
-        </ul>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <h3>Software Engineer Intern</h3>
+                <p><strong>App Stars Applications Private Limited, Chennai, Tamil Nadu</strong><br>November 2024 - Present</p>
+                <ul>
+                    <li>Developed and maintained blockchain-based decentralized applications (DApps) with integrations for MetaMask and Sui wallets, supporting both EVM and non-EVM blockchain ecosystems.</li>
+                    <li>Integrated secure RESTful APIs to enable seamless communication between front-end applications and blockchain networks, leveraging an understanding of Node.js code.</li>
+                    <li>Deployed and managed applications on AWS infrastructure (Ubuntu, MySQL, Apache2), ensuring scalability, performance, and reliability.</li>
+                    <li>Delivered five live blockchain projects with specialized features using Onramp payment gateways:</li>
+                    <ul>
+                        <li><strong>Zapme (<a href="https://ico.zapme.co" target="_blank" rel="noopener noreferrer">ico.zapme.co</a>):</strong> Built a secure ICO platform using Laravel for efficient token sales and user management.</li>
+                        <li><strong>Stoneform (<a href="https://ico.stoneform.io" target="_blank" rel="noopener noreferrer">ico.stoneform.io</a>):</strong> Implemented Stripe Onramp API for fiat-to-crypto transactions and integrated a Telegram bot (developed with Python with AI assistance) for real-time transaction notifications.</li>
+                        <li><strong>Coastal Crypto (<a href="https://tokensale.gocoastalcrypto.com" target="_blank" rel="noopener noreferrer">tokensale.gocoastalcrypto.com</a>):</strong> Developed a system bridging EVM and non-EVM chains, enabling automatic fund transfers using Node.js-based solutions.</li>
+                        <li><strong>Terrafund (<a href="https://buy.terrafund.dev" target="_blank" rel="noopener noreferrer">buy.terrafund.dev</a>):</strong> Integrated MoonPay Onramp API for secure cryptocurrency purchases, enhancing user accessibility.</li>
+                        <li><strong>YA Group Coin (<a href="https://admin.yagc.io" target="_blank" rel="noopener noreferrer">admin.yagc.io</a>):</strong> Implemented MoonPay Onramp API and developed an admin panel for streamlined ICO management.</li>
+                    </ul>
+                    <li>Collaborated in Agile teams to deliver high-quality, scalable solutions, adhering to best practices in code quality and project management.</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section id="achievements" class="section">
@@ -123,10 +148,14 @@
 
     <section id="projects" class="section">
         <h2>Projects</h2>
-        <h3>Dispalying-emoji-based-on-facial-expression</h3>
-        <p>Real-time facial expression detection system displaying corresponding emojis, developed in Python.</p>
-        <h3>Facial-Emotion-Recognition-using-OpenCV-and-Deepface</h3>
-        <p>Forked project for facial emotion recognition using OpenCV and Deepface in Python.</p>
+        <div class="project-item">
+            <h3>Dispalying-emoji-based-on-facial-expression</h3>
+            <p>Real-time facial expression detection system displaying corresponding emojis, developed in Python.</p>
+        </div>
+        <div class="project-item">
+            <h3>Facial-Emotion-Recognition-using-OpenCV-and-Deepface</h3>
+            <p>Forked project for facial emotion recognition using OpenCV and Deepface in Python.</p>
+        </div>
     </section>
 
     <section id="contact" class="section">
@@ -135,6 +164,10 @@
         <a href="https://github.com/karthikmadala" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://in.linkedin.com/in/karthik-m-15850a230" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
     </section>
 
+    <footer class="main-footer">
+        <p>&copy; 2024 Karthik Madala. All rights reserved.</p>
+        <p>Designed with passion and creativity.</p>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>

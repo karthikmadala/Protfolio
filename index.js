@@ -5,7 +5,25 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     document.querySelector(this.getAttribute("href")).scrollIntoView({
       behavior: "smooth",
     });
+    // Close mobile menu after clicking a link
+    const nav = document.querySelector(".main-nav");
+    const hamburger = document.querySelector(".hamburger");
+    nav.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
   });
+});
+
+// Hamburger menu toggle
+const hamburger = document.querySelector(".hamburger");
+const nav = document.querySelector(".main-nav");
+hamburger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+  const isExpanded = nav.classList.contains("active");
+  hamburger.setAttribute("aria-expanded", isExpanded);
+  hamburger.innerHTML = isExpanded
+    ? '<i class="fas fa-times"></i>'
+    : '<i class="fas fa-bars"></i>';
 });
 
 // Add 'active' class to navigation link on scroll
@@ -13,9 +31,9 @@ const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".main-nav a");
 
 const options = {
-  root: null, // viewport
+  root: null,
   rootMargin: "0px",
-  threshold: 0.7, // When 70% of the section is visible
+  threshold: 0.7,
 };
 
 const observer = new IntersectionObserver((entries, observer) => {
@@ -51,13 +69,13 @@ const sectionObserver = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("fade-in");
-        observer.unobserve(entry.target); // Unobserve once animated
+        observer.unobserve(entry.target);
       }
     });
   },
   {
     rootMargin: "0px",
-    threshold: 0.1, // Trigger when 10% of the section is visible
+    threshold: 0.1,
   }
 );
 
@@ -65,12 +83,12 @@ sections.forEach((section) => {
   sectionObserver.observe(section);
 });
 
-// Animated gradient background (existing logic, slightly adjusted for robustness)
+// Animated gradient background
 class AnimatedGradientBackground {
   constructor() {
     this.gradientInner = document.getElementById("gradientInner");
     this.startingGap = 120;
-    this.breathing = true; // Still allowing this as a control
+    this.breathing = true;
     this.gradientColors = ["#0A0A0A", "#2979FF", "#FF80AB"];
     this.gradientStops = [40, 60, 80];
     this.animationSpeed = 0.008;
@@ -84,7 +102,6 @@ class AnimatedGradientBackground {
 
   init() {
     if (this.gradientInner) {
-      // Ensure element exists before animating
       this.animate();
     }
   }
